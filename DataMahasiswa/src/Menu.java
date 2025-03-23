@@ -68,7 +68,7 @@ public class Menu extends JFrame {
 
         // initialize mainPanel and set layout
         mainPanel = new JPanel();
-        mainPanel.setLayout(new GridLayout(8, 2, 10, 10));
+        mainPanel.setLayout(new GridLayout(11, 2, 10, 10));
 
         // add components to mainPanel
         mainPanel.add(nimLabel);
