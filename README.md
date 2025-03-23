@@ -16,9 +16,11 @@ Saya Fariz Wibisono dengan NIM 2307589 mengerjakan Tugas Praktikum 4 dalam mata 
 
 ---
 
-Berikut adalah dokumentasi berupa video hasil implementasi program:
+Berikut adalah dokumentasi berupa rekaman hasil implementasi program:
 
 ![Lihat Animasi](screenshots/record.gif)
+
+**Disclaimer:** Rekaman ini dilakukan sebelum fitur konfirmasi delete selesai dikerjakan.
 
 ### Penjelasan Alur Program
 
