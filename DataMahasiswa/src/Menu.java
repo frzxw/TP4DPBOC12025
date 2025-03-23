@@ -44,16 +44,16 @@ public class Menu extends JFrame {
     private JButton cancelButton;
     private JComboBox<String> jenisKelaminComboBox;
     private JButton deleteButton;
+    private JLabel titleLabel;
+    private JLabel nimLabel;
+    private JLabel namaLabel;
+    private JLabel jenisKelaminLabel;
+    private JLabel usiaLabel;
+    private JLabel kelasLabel;
     private JSlider usiaSlider;
     private JRadioButton kelasC1Button;
     private JRadioButton kelasC2Button;
     private ButtonGroup kelasButtonGroup;
-    private JLabel titleLabel = new JLabel("Data Mahasiswa", SwingConstants.CENTER);
-    private JLabel nimLabel = new JLabel("NIM:");
-    private JLabel namaLabel = new JLabel("Nama:");
-    private JLabel jenisKelaminLabel = new JLabel("Jenis Kelamin:");
-    private JLabel usiaLabel = new JLabel("Usia:");
-    private JLabel kelasLabel = new JLabel("Kelas:");
 
     // constructor
     public Menu() {
@@ -65,34 +65,6 @@ public class Menu extends JFrame {
 
         // isi tabel mahasiswa
         mahasiswaTable = new JTable();
-
-        // initialize mainPanel and set layout
-        mainPanel = new JPanel();
-        mainPanel.setLayout(new GridLayout(11, 2, 10, 10));
-
-        // add components to mainPanel
-        mainPanel.add(nimLabel);
-        mainPanel.add(nimField = new JTextField());
-        mainPanel.add(namaLabel);
-        mainPanel.add(namaField = new JTextField());
-        mainPanel.add(jenisKelaminLabel);
-        mainPanel.add(jenisKelaminComboBox = new JComboBox<>());
-        mainPanel.add(usiaLabel);
-        mainPanel.add(usiaSlider = new JSlider(18, 30, 18));
-        mainPanel.add(kelasLabel);
-        JPanel kelasPanel = new JPanel(new FlowLayout());
-        kelasC1Button = new JRadioButton("C1");
-        kelasC2Button = new JRadioButton("C2");
-        kelasButtonGroup = new ButtonGroup();
-        kelasButtonGroup.add(kelasC1Button);
-        kelasButtonGroup.add(kelasC2Button);
-        kelasPanel.add(kelasC1Button);
-        kelasPanel.add(kelasC2Button);
-        mainPanel.add(kelasPanel);
-        mainPanel.add(addUpdateButton = new JButton("Add"));
-        mainPanel.add(cancelButton = new JButton("Cancel"));
-        mainPanel.add(deleteButton = new JButton("Delete"));
-        mainPanel.add(new JScrollPane(mahasiswaTable));
         mahasiswaTable.setModel(setTable());
 
         // ubah styling title
@@ -101,6 +73,11 @@ public class Menu extends JFrame {
         // atur isi combo box
         String[] jenisKelaminData = { "Laki-laki", "Perempuan" };
         jenisKelaminComboBox.setModel(new DefaultComboBoxModel<String>(jenisKelaminData));
+
+        // inisialisasi button group untuk radio button kelas
+        kelasButtonGroup = new ButtonGroup();
+        kelasButtonGroup.add(kelasC1Button);
+        kelasButtonGroup.add(kelasC2Button);
 
         // sembunyikan button delete
         deleteButton.setVisible(false);
