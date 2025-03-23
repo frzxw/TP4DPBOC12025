@@ -64,7 +64,6 @@ public class Menu extends JFrame {
         populateList();
 
         // isi tabel mahasiswa
-        mahasiswaTable = new JTable();
         mahasiswaTable.setModel(setTable());
 
         // ubah styling title
@@ -193,18 +192,31 @@ public class Menu extends JFrame {
     }
 
     public void deleteData() {
-        // hapus data dari list
-        listMahasiswa.remove(selectedIndex);
+        // Tampilkan dialog konfirmasi
+        int confirm = JOptionPane.showConfirmDialog(
+                null,
+                "Apakah Anda yakin ingin menghapus data ini?",
+                "Konfirmasi Hapus",
+                JOptionPane.YES_NO_OPTION);
 
-        // update tabel
-        mahasiswaTable.setModel(setTable());
+        // Jika pengguna memilih "Yes"
+        if (confirm == JOptionPane.YES_OPTION) {
+            // Hapus data dari list
+            listMahasiswa.remove(selectedIndex);
 
-        // bersihkan form
-        clearForm();
+            // Update tabel
+            mahasiswaTable.setModel(setTable());
 
-        // feedback
-        System.out.println("Delete berhasil!");
-        JOptionPane.showMessageDialog(null, "Data berhasil dihapus");
+            // Bersihkan form
+            clearForm();
+
+            // Feedback
+            System.out.println("Delete berhasil!");
+            JOptionPane.showMessageDialog(null, "Data berhasil dihapus");
+        } else {
+            // Jika pengguna memilih "No"
+            System.out.println("Delete dibatalkan!");
+        }
     }
 
     public final DefaultTableModel setTable() {
