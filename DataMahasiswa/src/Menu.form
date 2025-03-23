@@ -212,10 +212,6 @@
           <text value="C2"/>
         </properties>
       </component>
-      <component id="p1q2r" class="javax.swing.ButtonGroup" binding="kelasButtonGroup">
-        <constraints/>
-        <properties/>
-      </component>
     </children>
   </grid>
 </form>
